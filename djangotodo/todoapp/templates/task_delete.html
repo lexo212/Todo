@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <div class="delete-container">
+                        <p>Are you sure you want to delete ?</p>
+                        <h4>"{{ task.title }}"</h4>
+                        <div class="btn-container">
+                            <a href="{% url 'task-list' %}" class="btn btn-secondary">Cancel</a>
+                            <form action="" method="POST" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+    
